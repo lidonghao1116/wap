@@ -1,0 +1,8 @@
+jsonp1({"code":1000,"desc":{"proobjs":[
+
+{"packid":1,"duration":1,"packtype":1,"packvalue":0.01,"productid":"com.sunraynetworks.AtHomeCam.CloudServiceMonth","currencysymbol":"￥","currency":"CNY"},{"packid":10,"duration":6,"packtype":2,"packvalue":0.01,"productid":"com.sunraynetworks.AtHomeCam.MonthlyPayTest1","currencysymbol":"￥","currency":"CNY"},{"packid":1003,"duration":12,"packtype":3,"packvalue":0.01,"productid":"com.sunraynetworks.AtHomeCam.CloudServiceYear","currencysymbol":"￥","currency":"CNY"},
+
+{"packid":1004,"duration":1,"packtype":4,"packvalue":1000.0,"productid":"","currencysymbol":"","currency":"CNY"},
+{"packid":1009,"duration":7,"packtype":5,"packvalue":300.0,"currency":"CNY"}
+
+],"cversion":"4","isnewversion":"1"}})

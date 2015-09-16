@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" type="text/css" href="/wap/app_css/pagepiling.css" />
+<title>帮助</title>
+<style type="text/css">
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline:0;
+        vertical-align: baseline;
+    }
+    html, body {
+    margin:0;
+	padding:0;
+	background-color: #F5F0EC;
+	font-family: Arial,sans-serif;
+	    -webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
+    a{
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+<div class="conter">
+	<div class="pagepiling">
+	    <div class="section" id="section1">
+	    	<h1 data-text="sl1"></h1>
+	    </div>
+	    <div class="section" id="section2">
+	    	<h1 data-text="sl2"></h1>
+	    </div>
+	    <div class="section" id="section3">
+	    	<h1 data-text="sl3"></h1>
+	    </div>
+	    <div class="section" id="section4">
+	    	<h1 data-text="sl4"></h1>
+	    </div>
+	    <div class="section" id="section5">
+	    	<h1 data-text="sl5"></h1>
+	    </div>
+	    <div class="section" id="section6">
+	    	<h1 data-text="sl6"></h1>
+	    </div>
+	    <div class="section" id="section7">
+	    	<h1 data-text="sl7"></h1>
+	    </div>
+	    <div class="section" id="section8">
+	    	<h1 data-text="sl8"></h1>
+	    </div>
+	</div>
+	<div class="code_bg">
+		<img src="/wap/app_img/pic.jpg" style="width: 100%" />
+	</div>
+</div>
+<script type="text/javascript">
+
+function loadScript(a, b) {
+   	var c = document.createElement("script");
+   	c.type = "text/javascript",
+   	c.async = !0,
+   	c.src = a,
+   	c.readyState ? c.onreadystatechange = function() { ("loaded" == c.readyState || "complete" == c.readyState) && (c.onreadystatechange = null, b())
+   	}: c.onload = function() {
+   		b()
+   	}
+   	document.getElementsByTagName("head")[0].appendChild(c)
+}
+
+loadScript('/wap/help/files/lang.js',function(){
+	function get_query_args (e) {
+    	var a = new Object();
+    	var f = e.split("?");
+    	if (f.length >= 2) {
+    		var b = f[1];
+    		var d = b.split("&");
+    		for (var c in d) {
+    			$item = d[c].split("=");
+    			a[$item[0]] = $item[1]
+    		}
+    	}
+    	return a;
+    }
+	var a = get_query_args(location.href),lang=1,t;
+	for (var b in a) {
+		if (typeof a[b]==='string') {
+			if(b=='lang') {
+				lang = a[b];
+			}
+		}
+	}
+	var isUseLSProxy=function() {
+		var u = navigator.userAgent;
+		if(u.indexOf("AppleWebKit") > -1){
+			if(u.match(/\bMobile\/\d+/)==null){
+				return false;
+			}
+			if(u.match(/iPad/i)==null){
+				return false;
+			}
+			return true;
+		}
+		return false
+	}
+	Array.prototype.slice.call(document.querySelectorAll("h1")).forEach(function(a,i) {
+		t=a.getAttribute('data-text'),d=a.parentNode,o=document;
+		var img = o.createElement("img"),div=o.createElement('div'),h3=o.createElement('h3');
+		var path = langage[lang].path;
+		if(isUseLSProxy()){
+			path+='pad/'
+		}
+		img.src=path+'0'+(++i)+'.jpg';
+		a.innerHTML=langage[lang][t],h3.innerHTML=langage[lang]['hl'+i];
+		div.appendChild(img),div.appendChild(h3),d.appendChild(div),div.setAttribute('class','intro');
+    })
+})
+</script>
+</body>
+</html>

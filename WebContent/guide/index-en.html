@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<title>AtHome Camera 3.0.0 Beta Test Invitation</title>
+<script type="text/javascript" src="load.js"></script>
+<link rel="stylesheet" href="../app_css/up.min.css">
+</head>
+<body onload="load.init()" class="bg">
+    <div id="swiper" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div id="mevn1" class="swiper-slide">
+                <div class="nuvem">
+                    <img data-img="../app_img/up/@file/logo.png">
+                </div>
+                <div class="conter tx mg20">
+                    <h3 data-text="up1"></h3>
+                    <h3 data-text="up2"></h3>
+                    <p data-text="up3" style="color: #fff;"></p>
+                </div>
+                <div class="footer tx">
+                    <a data-href="down.html" style="color: #FFFBF4;" data-text="dn2" class="btn btn-down rd"></a>
+                </div>
+            </div>
+            <div id="mevn2" class="swiper-slide">
+                <div class="conter tx">
+                    <h2 class="tb-l" data-text="up5"></h2>
+                    <p class="sm" data-text="up6"></p>
+                    <div class="li-img">
+                        <ul>
+                            <li>
+                                <img src="../app_img/up/li_01.png">
+                                <p data-text="up7"></p>
+                            </li>
+                            <li>
+                                <img src="../app_img/up/li_02.png">
+                                <p data-text="up8"></p>
+                            </li>
+                            <li>
+                                <img src="../app_img/up/li_03.png">
+                                <p data-text="up9"></p>
+                            </li>
+                            <li>
+                                <img src="../app_img/up/li_04.png">
+                                <p data-text="up10"></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer tx">
+                    <img class="pic" data-img="../app_img/up/@file/pic_01.jpg">
+                </div>
+            </div>
+            <div id="mevn3" class="swiper-slide">
+                <div class="conter tx">
+                    <h2 class="tb-l" data-text="up11"></h2>
+                    <p class="sm" data-text="up12"></p>
+                </div>
+                <div class="footer tx">
+                    <img class="pic" data-img="../app_img/up/@file/pic_02.jpg">
+                </div>
+            </div>
+            <div id="mevn4" class="swiper-slide">
+                <div class="conter tx">
+                    <div class="main">
+                        <h3 data-text="up13"></h3>
+                        <h2 data-text="up14"></h2>
+                    </div>
+                    <p class="sm" data-text="up19"></p>
+                </div>
+                <div class="footer tx">
+                    <ul class="pcimg">
+                      <li><img class="wir" data-img="../app_img/up/@file/pc02.jpg"></li>
+                      <li class="last"><img class="wil" data-img="../app_img/up/@file/pc01.jpg"></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="mevn5" class="swiper-slide">
+                <div class="conter tx">
+                    <h2 class="tb-l" data-text="up15"></h2>
+                    <p class="sm" data-text="up16"></p>
+                </div>
+                <div class="footer tx">
+                    <img class="pic" data-img="../app_img/up/@file/pic_04.jpg">
+                </div>
+            </div>
+            <div id="mevn6" class="swiper-slide">
+                <div class="conter down tx">
+                    <a data-href="down.html" style="color: #FFFBF4;" data-text="dn2" class="btn btn-down rd"></a>
+                    <h3 data-text="up17"></h3>
+                    <p class="sm"><samp data-text="up18"></samp></p>
+                </div>
+            </div>
+        </div>
+        <a id="next" dLink="down.html" class="arrow"></a>
+    </div>
+    <script src="swiper.min.js"></script>
+
+    <script>
+    var n = document.getElementById("next"),leng=4;
+    var swiper = new Swiper('.swiper-container',{
+        direction: 'vertical',
+		loop: false,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        mousewheelControl: true,
+        //freeMode: true,
+        onTouchMove:function(){
+            if(swiper.activeIndex==4){
+                if(swiper.touches.diff<0){
+                    document.getElementById('mevn5').appendChild(n)
+                }else{
+                    if(-swiper.translate<=swiper.snapGrid[4]){
+                        return document.getElementById("swiper").appendChild(n)
+                    }
+                    if(swiper.touches.diff>swiper.slidesSizesGrid[5]){
+                        document.getElementById("swiper").appendChild(n)
+                    }
+                }
+            }
+        },
+        onSlideChangeStart:function(e){
+            switch(swiper.activeIndex){
+				case 0:
+					init();
+					break;	    			
+				case 4:
+                    swiper.snapGrid[5]=swiper.snapGrid[4]+swiper.slidesSizesGrid[5];
+                    break;	
+                case 1:
+				case 2:
+				case 3:
+				case 5:	
+					addNext();
+				    break;	
+            }
+        },
+        onSize: adaptive
+    });
+    function adaptive(e){
+        var w = e.width,h=e.height,c=0,m;
+        var mevn1 = document.getElementById('mevn1');
+        Array.prototype.slice.call(mevn1.getElementsByTagName('div')).forEach(function(e){
+            if(e.className.match(/conter/i)){
+                c=(h-e.clientHeight)*0.14,m = c + 'px 0',e.style.margin=m;
+            }
+        })
+    }
+    function init(){
+        var h="";
+        for(var i=1;i<=leng;i++){
+            h+='<img class="img'+i+'" src="../app_img/up/arrow.png">';
+        }
+        n.className='arrow',n.innerHTML=h;
+        adaptive({width: document.body.clientWidth,height:document.body.clientHeight});
+    }
+    function remove(){
+        n.className='',n.innerHTML='';
+    }
+    function addNext(){
+        var c = n.className;
+        if ("string" == typeof c && c.match(/next/)) return;
+        n.className='next',n.innerHTML='<img src="../app_img/up/bottom.png">';
+    }
+    document.getElementById('next').onclick=function(){
+        var c = this.className;
+        if("string" == typeof c && c.match(/arrow/)){
+            return swiper.slideNext();
+        }
+        location.href = this.getAttribute('dLink') + '?' + load.args()
+    }
+    Array.prototype.slice.call(document.querySelectorAll("[data-href]")).forEach(function(d){
+        d.href = d.getAttribute('data-href') + '?' + load.args()
+    })
+    init();
+    </script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?d48f21ab4771bed7a0f1fa78d50d57de";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+</body>
+</html>

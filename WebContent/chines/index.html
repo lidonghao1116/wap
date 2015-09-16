@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=0" name="viewport">
+  <title>Chinese region picker</title>
+  <script src="/wap/lib/jquery/jquery-1.9.1.min.js"></script>
+  <script src="files/chineserp.min.js"></script>
+  <script src="files/regionpicker.min.js"></script>
+  <link rel="stylesheet" href="files/chineserp.css" media="screen">
+  <style type="text/css">
+  body{padding:0;margin:0;font-size:14px;line-height:200%;color:#333;}
+  a{color:#333;}
+  .picker{
+   text-align: center;
+  }
+  .picker input{
+    border:1px solid #CCC;padding:5px;
+    display:block;width: 100%; height:30px; line-height: 30px; color: #666;
+    font-size: 16px;
+    -moz-box-shadow:0 0 5px #ccc inset;
+    -webkit-box-shadow:0 0 5px #ccc inset;
+    box-shadow:0 0 5px #ccc inset;
+  }
+  .clearfix:after{
+    content:'\0020';
+    display:block;
+    overflow:hidden;
+    visibility:hidden;
+    width:0;
+    height:0;
+    clear:both;
+  }
+  #regions-info{
+    width: 800px;
+    margin: 0 auto;
+  }
+  #regions-info ul{
+    float: left;
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    border-left: 1px dotted #DDD;
+  }
+  </style>
+</head>
+<body>
+<div style="">
+	<div style="position: absolute;width: 100%;height: 100%;overflow: auto;">
+		<div id="picker1" class="picker">
+		  <h3 style="margin: 0;padding: 0">测试</h3>
+		  <select>
+		  	<option>请选择</option>
+		  	<option>1</option>
+		  	<option>2</option>
+		  	<option>2</option>
+		  	<option>2</option>
+		  	<option>2</option>
+		  	<option>2</option>
+		  	<option>2</option>
+		  	<option>2</option>
+		  	<option>2</option>
+		  	<option>3llllllllllllllllllsssssssssssssss</option>
+		  	<option>3</option>
+		  	<option>3</option>
+		  	<option>3</option>
+		  	<option>3</option>
+		  	<option>3</option>
+		  	<option>4</option>
+		  </select>
+		  <div>
+		  	<div>
+		  		<label data-chines>
+		  		<input type="hidden" readonly="readonly" value="" /> <font>请选择省</font>
+				</label>
+		  	</div>
+		  	<div class="htm">
+		  	</div>
+		  </div>
+		  <div style="height: 600px">
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>1</p>
+			<p>12</p>
+			<p>12</p>
+			<p>12</p>
+			<p>12</p>
+			<p>12</p>
+			<p>12</p>
+			<p>12</p>
+			<p>12</p>
+			<p>12</p>
+			<p>12</p>
+			<p>12</p>
+			<p>12</p>
+			<p>12</p>
+			<p>12</p>
+			<p>122</p>
+		  </div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+  $(function(){
+    $('[data-chines]').regionPicker({remote:'/wap/chines/area'})
+    .on('picked.rp', function(e, regions){
+    	regions.map(function(r,i){
+    		if(r==undefined) return;
+    		$('.htm').append('<span>'+r.n+'</span>')
+    	})
+    });
+    /**
+    $('#picker2 .region-picker').regionPicker({remote:'/wap/chines/area'}).on('picked.rp', function(e, regions){
+      $('#regions-info').html(regions.map(function(r){ return regionInfo(r); }).join("\n"));
+    })
+    .on('initializing.rp', function(e, picker){
+      $(this).text('initializing').attr('disabled', true);
+    })
+    .on('initialized.rp', function(e, picker){
+      $(this).text('Pickup a region').attr('disabled', false);
+    })
+    .on('loading.rp', function(e, picker){
+      $(this).text('loading...').attr('disabled', true);
+    })
+    .on('loaded.rp', function(e, data, picker){
+      $(this).text('Pickup a region').attr('disabled', false);
+    });
+    */
+  });
+</script>
+</body>
+</html>

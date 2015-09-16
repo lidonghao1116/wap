@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta http-equiv="content-language" content="zh-cn">
+<meta http-equiv="x-ua-compatible" content="ie=emulateie9">
+<meta name="description" content="推荐一个免费视频监控应用" />
+<meta name="keywords" content="推荐一个免费视频监控应用：“掌上看家”最好的免费手机视频监控软件；帮你看家，让你安心。" />
+<meta name="copyright" content="本页版权归南京云恩所有。All Rights Reserved">
+<meta name="robots" content="index">
+<meta name="author" content="iChano">
+<title>推荐一个免费视频监控应用</title>
+<script type="text/javascript" src="/wap/share/files/load.js"></script>
+<style type="text/css">
+*{margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline;}body{background-color: #F5F0EC;}
+a:active,a:hover{outline: 0;-webkit-tap-highlight-color: rgba(255, 255, 255, 0)}
+.container{max-width: 640px;margin: auto;padding: 0 20px;}.color1{color: #F2745C}
+.row{width:100%;*zoom:1;}.row:before,.row:after{display:table;content:"";line-height:0}.row:after{clear:both}
+img{width: 100%}.log_img{width: 7rem;margin-top: 1em}.tc{text-align: center;}.txt{font-size: 1.08rem;margin: 1em 0;color: #7B6A66}
+.btn{padding:10px 15px;font-size:1.2rem;font-weight:normal;line-height:1.4;border:0;border-radius:4px;-webkit-transition:border .25s linear,color .25s linear,background-color .25s linear;transition:border .25s linear,color .25s linear,background-color .25s linear;-webkit-font-smoothing:subpixel-antialiased}
+.btn-default{display:block;background-color: #F2745C;text-decoration: none;}.btn-default:hover,.btn-default:focus,.btn-default:active{color:#fff;background-color: #E56950;box-shadow: inset 0 4px 8px #D95B42;}
+p{margin: 1em 0;font-size: 1rem}a.un{text-decoration: underline;font-size: 1.2rem}
+.modal {position: fixed;top: 0;background-color: rgba(67, 67, 67, 0.7);right: 0;bottom: 0;left: 0;z-index: 1050;display: none;overflow: hidden;-webkit-overflow-scrolling: touch;outline: 0;}
+.modal.in{display: block;}
+.modal-content{position: absolute;background-color: #fff;border-radius: 8px;text-align: center;top: 50%;left: 50%;-webkit-transition: -webkit-transform .3s ease-out;-o-transition: -o-transform .3s ease-out;transition: transform .3s ease-out;}
+.modal-content h3{font-size: 1.1rem;margin: 0.8em 0;font-weight: 600;color: #333;}.modal-content p{font-size: 1.0rem;text-align: left;padding: 0 1em;color: #444}.modal-content a{font-size: 1.1rem}
+.modal-footer {overflow: hidden;border-top: 1px solid #ccc;}.modal-footer a{padding: 0.8em 0;display: block;width: 50%;float: left;border-radius: 0;color: #4983F7}
+.primary{border-right: 1px solid #ccc;margin-left: -1px;}
+.mg-b{margin-bottom: 1.3em;}
+@media only screen and (max-width:480px) {
+    body{font-size: 95%;}
+    .modal-content{width: 280px;margin-left: -140px;margin-top: -75px;}
+    .modal-footer a{padding: 0.7em 0;}
+}
+@media only screen and (min-width:481px) and (max-width:720px) {
+    body {font-size: 100%;}
+    .modal-content{width: 300px;margin-left: -150px;margin-top: -75px;}
+}
+@media only screen and (min-width:721px) {
+	body {font-size: 110%;}
+	.modal-content{width: 345px;margin-left: -172px;margin-top: -75px;}
+}
+</style>
+</head>
+<body onload="load.init()">
+<div class="woper">
+	<div class="row tc mg-b">
+		<img class="log_img" src="/wap/app_img/reg/logo.png" />
+	</div>
+	<div class="row">
+		<div class="container">
+			<div class="tc">
+				<img src="/wap/app_img/reg/pic.jpg" />
+			</div>
+			<div class="txt" data-text="a1">
+			</div>
+			<a id="jump" href="" style="color: #fff" class="btn btn-default tc" data-text="a2"></a>
+			<p class="color1" data-text="a3"></p>
+			<div class="txt tc" style="margin-top: 3.5em">
+				<a id="down" style="color: #4983F7" class="un" data-text="a4"></a>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+(function(j) {
+    var a = "modal", b = document,o = load.setval({t:'a5',m:'a6',b:'a7',c:'a8'});
+    function h(g, d, e) {
+        var c = b.createElement(g);
+        d && (c.className = d), e && (c.innerHTML = e);
+        return c;
+    }
+    function i(c) {
+    	var x=h("a", "btn primary", o.b || ""),y=h("a", "btn close", o.c || "")
+    	x.onclick = function(){
+    		location.href='http://www.ichano.cn/down/device.do';
+    	}
+    	y.onclick = function(){
+    		b.querySelector("div.modal").className=a;
+    	}
+        c.appendChild(x),c.appendChild(y);
+        return c;
+    }
+    function m(c) {
+    	var g = h('div',a+'-content');
+    	g.appendChild(h("h3", "", o.t)),g.appendChild(h("p", "", o.m)),g.appendChild(i(h("div", a + "-footer")));
+    	c.appendChild(g),b.body.appendChild(c);
+    }
+    function k() {
+        var c = b.querySelector("div.modal"),l;
+        if(c==null) return m(h("div", a+" in"));
+        l = c.className,l.indexOf('in')>0? l=a : l+=" in",c.className=l;
+    }
+    b.getElementById("down").onclick = k;
+	document.getElementById("jump").setAttribute("href", "phone.html?" + load.args());
+})(window);
+</script>
+</body>
+</html>
